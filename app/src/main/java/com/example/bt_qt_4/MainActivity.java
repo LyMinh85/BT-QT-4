@@ -1,10 +1,14 @@
 package com.example.bt_qt_4;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,9 +40,27 @@ public class MainActivity extends AppCompatActivity {
         officialsList.add(officials5);
         officialsList.add(officials6);
 
-        officialsAdapter = new OfficialsAdapter(officialsList);
+        officialsAdapter = new OfficialsAdapter(this, officialsList);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         rcvOfficials.setLayoutManager(linearLayoutManager);
         rcvOfficials.setAdapter(officialsAdapter);
+
+        rcvOfficials.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+            @Override
+            public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+                return false;
+            }
+
+            @Override
+            public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+                Intent intent = new Intent(MainActivity.this, OfficialActivity.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+
+            }
+        });
     }
 }

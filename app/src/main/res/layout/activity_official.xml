@@ -9,6 +9,7 @@
 
     <TextView
         android:id="@+id/txt1"
+        android:textSize="20sp"
         android:textColor="#FFFFFF"
         android:textAlignment="center"
         android:layout_width="match_parent"
@@ -16,6 +17,7 @@
         android:background="#731683"/>
 
     <LinearLayout
+        android:id="@+id/laytout1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black"
@@ -23,30 +25,20 @@
 
         <TextView
             android:id="@+id/txt2"
+            android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:ems="10"
-            android:inputType="textPersonName" />
-
-        <!--        <ImageView-->
-        <!--            android:id="@+id/imageView"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:src="@drawable/Capture"/>-->
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
+            android:textColor="#FFFFFF" />
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:minWidth="200dp"
+            android:minHeight="200dp"
+            android:background="@null"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:src="@drawable/avatar"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -59,14 +51,15 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
                 android:text="Andress:"
+                android:textSize="20sp"
                 android:textColor="#FFFFFF" />
 
             <TextView
                 android:id="@+id/txt4"
+                android:paddingTop="10dp"
+                android:textSize="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
 
@@ -77,6 +70,7 @@
 
             <TextView
                 android:id="@+id/txt5"
+                android:textSize="20sp"
                 android:layout_width="141dp"
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
@@ -85,10 +79,10 @@
 
             <TextView
                 android:id="@+id/txt6"
+                android:textSize="20sp"
+                android:paddingTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
 
@@ -99,6 +93,7 @@
 
             <TextView
                 android:id="@+id/txt7"
+                android:textSize="20sp"
                 android:layout_width="141dp"
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
@@ -107,10 +102,10 @@
 
             <TextView
                 android:id="@+id/txt8"
+                android:textSize="20sp"
+                android:paddingTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
 
@@ -121,6 +116,7 @@
 
             <TextView
                 android:id="@+id/txt9"
+                android:textSize="20sp"
                 android:layout_width="141dp"
                 android:layout_height="wrap_content"
                 android:paddingLeft="30dp"
@@ -129,10 +125,10 @@
 
             <TextView
                 android:id="@+id/txt10"
+                android:textSize="20sp"
+                android:paddingTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
                 android:textColor="#FFFFFF" />
         </LinearLayout>
 
@@ -144,33 +140,37 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <!--            <ImageView-->
-            <!--                android:id="@+id/imageView1"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_weight="1"-->
-            <!--                android:src="@drawable/Capture1" />-->
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/youtube" />
 
-            <!--            <ImageView-->
-            <!--                android:id="@+id/imageView2"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_weight="1"-->
-            <!--                android:src="@drawable/Capture2" />-->
+            <ImageButton
+                android:background="@null"
+                android:id="@+id/imageButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/gg" />
 
-            <!--            <ImageView-->
-            <!--                android:id="@+id/imageView3"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_weight="1"-->
-            <!--                android:src="@drawable/Capture3" />-->
+            <ImageButton
+                android:background="@null"
+                android:id="@+id/imageButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/tw" />
 
-            <!--            <ImageView-->
-            <!--                android:id="@+id/imageView4"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="match_parent"-->
-            <!--                android:layout_weight="1"-->
-            <!--                android:src="@drawable/Capture4" />-->
+            <ImageButton
+                android:background="@null"
+                android:id="@+id/imageButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/facebook1" />
         </LinearLayout>
     </LinearLayout>
 

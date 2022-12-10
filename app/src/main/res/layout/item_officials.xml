@@ -27,7 +27,8 @@
             android:layout_height="wrap_content"
             android:textSize="18dp"
             android:textColor="#F3881D9A"
-            android:text="Name"/>
+            android:text="Name"
+            android:paddingEnd="5dp"/>
 
         <TextView
             android:id="@+id/tv_party"
