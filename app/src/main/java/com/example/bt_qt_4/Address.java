@@ -1,6 +1,11 @@
 package com.example.bt_qt_4;
 
-public class Address {
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.Serializable;
+
+public class Address implements Serializable {
     private String line1;
     private String line2;
     private String city;
@@ -16,6 +21,16 @@ public class Address {
         this.city = city;
         this.state = state;
         this.zip =  zip;
+    }
+
+    public Address(JSONObject object) {
+        try {
+            city = object.getString("city");
+            state = object.getString("state");
+            zip = object.getString("zip");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     public String getLine1() {
@@ -56,5 +71,12 @@ public class Address {
 
     public String getZip() {
         return zip;
+    }
+
+    @Override
+    public String toString() {
+        return city + ", " +
+                state + ", " +
+                zip + ", ";
     }
 }

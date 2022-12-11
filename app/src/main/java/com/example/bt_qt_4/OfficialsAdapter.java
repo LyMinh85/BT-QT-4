@@ -2,11 +2,11 @@ package com.example.bt_qt_4;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,36 +14,37 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class OfficialsAdapter extends RecyclerView.Adapter<OfficialsAdapter.OfficialsViewHolder>{
-    private List<Officials> officialsList;
+    private List<Office> offices;
+    private List<Official> officials;
     private Context context;
 
-    public OfficialsAdapter(Context context, List<Officials> officialsList) {
-        this.officialsList = officialsList;
+    public OfficialsAdapter(Context context, List<Office> offices, List<Official> officials) {
+        this.offices = offices;
+        this.officials = officials;
         this.context = context;
     }
 
     @NonNull
     @Override
     public OfficialsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_officials,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_office,parent,false);
         return new OfficialsViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull OfficialsAdapter.OfficialsViewHolder holder, int position) {
-        Officials officials = officialsList.get(position);
+        Office office = offices.get(position);
+        Official official = officials.get(office.getOfficialIndices().get(0));
 
-        if (officials == null){
-            return;
-        }
-        holder.tvPosition.setText(officials.getPosition());
-        holder.tvName.setText(officials.getName());
-        holder.tvParty.setText(officials.getParty());
+        holder.tvPosition.setText(official.getPosition());
+        holder.tvName.setText(official.getName());
+        holder.tvParty.setText(official.getParty());
 
-        holder.setItemClickListener(new ItemClickListener() {
+        holder.tvName.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view, int position, boolean isLongClick) {
+            public void onClick(View view) {
                 Intent intent = new Intent(context, OfficialActivity.class);
+                intent.putExtra("official", official);
                 context.startActivity(intent);
             }
         });
@@ -51,37 +52,22 @@ public class OfficialsAdapter extends RecyclerView.Adapter<OfficialsAdapter.Offi
 
     @Override
     public int getItemCount() {
-        if (officialsList != null){
-            return officialsList.size();
-        }
-        return 0;
+        return offices.size();
     }
 
-    static class OfficialsViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    static class OfficialsViewHolder extends RecyclerView.ViewHolder {
         private TextView tvPosition;
         private TextView tvName;
         private TextView tvParty;
 
-        private ItemClickListener itemClickListener;
-
         public OfficialsViewHolder(@NonNull View itemView) {
             super(itemView);
-
-            itemView.setOnClickListener(this);
 
             tvPosition = itemView.findViewById(R.id.tv_position);
             tvName = itemView.findViewById(R.id.tv_name);
             tvParty = itemView.findViewById(R.id.tv_party);
         }
 
-        public void setItemClickListener(ItemClickListener itemClickListener) {
-            this.itemClickListener = itemClickListener;
-        }
-
-        @Override
-        public void onClick(View view) {
-            itemClickListener.onClick(view, getAdapterPosition(),false);
-        }
     }
 
     public interface ItemClickListener {

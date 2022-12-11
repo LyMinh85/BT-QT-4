@@ -1,14 +1,16 @@
 package com.example.bt_qt_4;
 
-public class Chanels {
+import java.io.Serializable;
+
+public class Channel implements Serializable {
     private String type;
     private String id;
 
-    public Chanels(){
+    public Channel(){
 
     }
 
-    public Chanels(String type, String id){
+    public Channel(String type, String id){
         this.type = type;
         this.id = id;
     }

@@ -21,23 +21,23 @@
         android:padding="10dp">
 
         <TextView
-            android:layout_toLeftOf="@+id/tv_party"
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:textColor="#F3881D9A"
+            android:layout_toLeftOf="@+id/tv_party"
+            android:paddingEnd="5dp"
             android:text="Name"
-            android:paddingEnd="5dp"/>
+            android:textColor="#F3881D9A"
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/tv_party"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:textSize="18dp"
+            android:text="Party"
             android:textColor="#F3881D9A"
-            android:text="Party"/>
+            android:textSize="18dp" />
 
     </RelativeLayout>
 
